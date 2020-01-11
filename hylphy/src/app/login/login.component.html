@@ -1,0 +1,47 @@
+
+
+
+<div fxLayout="column" fxLayoutAlign="center center" class="login-main ">
+  
+    <mat-card class="example-card card-3" class="card-content card-3" fxLayout="column" fxLayoutAlign="center center" >
+        <mat-card-header fxLayout="column">
+          <img align ="center "src="assets/logo2.png">
+         
+       
+        </mat-card-header>
+        <mat-card-content>
+
+            <h3>Se Connecter</h3>
+            <p>Connectez-vous à l'aide de votre
+               compte Hylphy et accédez à vos services.</p>
+          <form >
+            <table  cellspacing="0">
+              <tr>
+                <td>
+                  <mat-form-field fxLayoutAlign="center center">
+                  <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+              <td><mat-form-field >
+                <input matInput placeholder="Password" [(ngModel)]="password"type="password" name="password" required>
+              </mat-form-field></td>
+            </tr></table>
+          </form>
+          <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+        </mat-card-content>
+        
+        <mat-card-actions>
+          <button mat-raised-button (click)="login()" color="primary">Suivant</button>
+          <mat-spinner  color="accent"diameter="20" *ngIf="flag"></mat-spinner>
+         
+
+          <p>Nouveau sur Hylphy ?</p> <a href="https://www.google.com">Creer votre compte Hylphy</a>
+          
+        </mat-card-actions>
+       
+      </mat-card>
+   
+    </div>
+   
