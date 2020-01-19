@@ -1,12 +1,96 @@
+<body>
+  <header class="page-header">
+    <app-navigation style="display: contents"></app-navigation>
+  </header>
+  <main class="page-content">
+    <!-- <nav class="content-navigation">//_____________________________leftside
+      <h1>
+        Navigation
+      </h1>
+    </nav> -->
+    <article class="content-article">
+
+      <div class="item-order">
+        <div class="Tri">
+          <b>Tri</b>
+
+        </div>
+        <div class="radio-btn">
+          <div>
+            <mat-radio-button>Prochain RDV</mat-radio-button>
+          </div>
+          <div>
+            <mat-radio-button>Ascendant</mat-radio-button>
+          </div>
+          <div>
+            <mat-radio-button>Desecndant</mat-radio-button>
+          </div>
+        </div>
 
 
-<mat-toolbar color="primary" class="navbar">
-    <div>Hylphy</div>
-    <div>
-        <span>About</span>
-        <span>Services</span>
-        <span>contact</span>
+      </div>
+      <div class="item-userlist">
+        <div>
+          <form class="hidden-sm">
+            <mat-form-field style="font-size: 1rem;  width:364px; display: flex;">
+              <input matInput placeholder="Search">
+            </mat-form-field>
+          </form>
+        </div>
+        <span *ngFor="let user of userList">
+          <app-user-card></app-user-card>
+        </span>
+      </div>
+      <div class="item-user-data">
+        <div class="item-user-data-1">
+          <div class="item-info-tag">
+            <b>Informations</b>
+          </div>
 
-    </div>
-</mat-toolbar>
-<div><h1>Welcome to Hylphy!</h1></div>
+          <div class="item-info">
+            <div class="item-info-1">
+              <span>
+                <b>Dorothée Lemarchand</b>
+              </span>
+              <span>Née le 19/03/1978 à Paris</span>
+              <span>2780375115118 56</span>
+              <span>12 rue de l’Espérance 92160 Antony</span>
+              <span>06 23 24 56 67</span>
+              <span>dorothée.lemarchand@gmaiil.com</span>
+
+
+            </div>
+            <div class="item-info-2">
+
+              <span>Mariée, 3 enfants</span>
+              <span>Cadre supérieure</span>
+              <span>Mutuelle du Mans</span>
+              <span>Médecin tratant : Dr Roberty</span>
+              <span>XXX</span>
+              <span>XXXX</span>
+
+            </div>
+          </div>
+        </div>
+        <div class="item-user-data-2">
+          <div class="item-msg">
+            <b>Messages/Evenements/Notifcation</b>
+          </div>
+          <div class="msg-cont-card">
+            <span *ngFor="let user of msgCardList">
+              <app-msg-card></app-msg-card>
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </article>
+    <!-- <aside class="content-sidebar">//_____________________________rightside
+      <h1>Sidebar</h1>
+    </aside> -->
+  </main>
+  <!-- <footer class="page-footer">
+    <h1>Page Footer</h1>
+
+  </footer> -->
+</body>

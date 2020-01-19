@@ -10,6 +10,9 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
+  userList = Array(10);
+  msgCardList = Array(5);
 
 }

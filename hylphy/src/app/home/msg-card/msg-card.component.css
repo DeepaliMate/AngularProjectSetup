@@ -1,0 +1,34 @@
+.msg-card {
+  /* width: 686px; */
+  height: 62px;
+  border-radius: 4px;
+  box-shadow: 0 4px 23px 0 rgba(0, 0, 0, 0.11);
+  display: flex;
+  flex-direction: column;
+  /* background-color: teal; */
+  color: black;
+  margin-top: 7px;
+}
+
+.msg-card-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  margin-left: 27px;
+}
+
+.name {
+  font-family: Arial;
+  font-size: 11px;
+}
+
+.date {
+  font-family: Arial;
+  font-size: 11px;
+  color: #b9bcb9;
+}
+
+.document {
+  font-family: Arial;
+  font-size: 11px;
+}
