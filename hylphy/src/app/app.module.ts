@@ -1,3 +1,4 @@
+import { LoginService } from './../services/login.service';
 import { AngularMaterialModule } from './angular-material/angular-material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -18,7 +19,9 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { UserCardComponent } from './home/user-card/user-card.component';
 import { MsgCardComponent } from './home/msg-card/msg-card.component';
 import { NewPatientComponent } from './home/new-patient/new-patient.component';
-;
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 
 const routes: Routes = [
@@ -50,12 +53,13 @@ const routes: Routes = [
     FormsModule,
     LayoutModule,
     AngularMaterialModule,
+    HttpClientModule,
 
   ],
   exports: [
     RouterModule
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
