@@ -22,6 +22,12 @@ export class LoginComponent implements OnInit {
     this.loginService.getLogin(this.username, this.password).subscribe((data) => {
       console.log("fnidjndsjn");
       console.log(JSON.parse(data));
+      if(data!=""){
+        this.router.navigate(["home"]);
+      }
+      else {
+         alert("Invalid credentials");
+       }
       // this.employee = data
     });
     //   this.flag = true;
