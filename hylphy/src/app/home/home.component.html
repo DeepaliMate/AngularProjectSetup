@@ -16,29 +16,64 @@
 
         </div>
         <div class="radio-btn">
-          <div>
-            <mat-radio-button>Prochain RDV</mat-radio-button>
-          </div>
-          <div>
-            <mat-radio-button>Ascendant</mat-radio-button>
-          </div>
-          <div>
-            <mat-radio-button>Desecndant</mat-radio-button>
-          </div>
+          <mat-radio-group [(ngModel)]="sectionType">
+            <!-- <mat-radio-button value="Section1" (change)="onSelectionChange('Section1')" name="sectionType">Section</mat-radio-button> -->
+            <mat-radio-button style="padding-bottom:6px" [value]=1 (change)="onSelectionChange('2')" [checked]="true" name="sectionType">Ascendant</mat-radio-button>
+            <br>
+            <mat-radio-button style="padding-bottom:6px" value="1" (change)="onSelectionChange('1')" name="sectionType">Desecndant</mat-radio-button>
+          </mat-radio-group>
         </div>
 
 
       </div>
       <div class="item-userlist">
-        <div>
-          <form class="hidden-sm">
-            <mat-form-field style="font-size: 1rem;  width:364px; display: flex;">
-              <input matInput placeholder="Search">
-            </mat-form-field>
-          </form>
+        <div style="display: flex;">
+          <div style="    display: flex;  width: 73%;padding-left: 9px;">
+            <form class="hidden-sm">
+              <mat-form-field style="font-size: 1rem;  width:364px; display: flex;">
+                <input matInput placeholder="Search">
+                <!-- <button mat-fab>Plus</button> -->
+              </mat-form-field>
+            </form>
+          </div>
+          <div style="padding-top: 9px;">
+            <button mat-mini-fab color="primary" matTooltip="Add New Patient" (click)="openDialog()">
+              <i class="fa fa-plus"></i>
+            </button>
+          </div>
+
+
+
         </div>
-        <span *ngFor="let user of userList">
-          <app-user-card></app-user-card>
+        <span *ngFor="let user of patientList  let index=index ">
+          <!-- ***************************************************** -->
+          <div class="user-card" [ngClass]="{'isActive': ind === index}" (click)="viewMessageCard(index)">
+            <div class="user-profile  ">
+              <mat-icon color="primary" class="user-icon">account_circle</mat-icon>
+              <span class="user-detail ">
+                <span>{{user.name}}</span>
+                <br>
+                <span>{{user.neeLe}}</span>
+                <br>
+                <span>{{user.phone}}</span>
+              </span>
+              <span>
+                <span>
+                  <i class=" fa fa-cog fa-2x" style="color: grey; margin-top: 13px"></i>
+                </span>
+              </span>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="detail">
+              <div class="d1">
+                <span *ngIf="!notifications">Prochain RDV le {{user.prodv}}</span>
+                <span *ngIf="notifications">{{user.notifications}} Notifications</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- <app-user-card [name]=user.name [neeLe]=user.neeLe [phone]=user.phone [notifications]=user.notifications [prodv]=user.prodv
+            [index]=i></app-user-card> -->
         </span>
       </div>
       <div class="item-user-data">
@@ -50,19 +85,17 @@
           <div class="item-info">
             <div class="item-info-1">
               <span>
-                <b>Dorothée Lemarchand</b>
+                <b>{{patientList[ind].name}}</b>
               </span>
-              <span>Née le 19/03/1978 à Paris</span>
-              <span>2780375115118 56</span>
-              <span>12 rue de l’Espérance 92160 Antony</span>
-              <span>06 23 24 56 67</span>
-              <span>dorothée.lemarchand@gmaiil.com</span>
-
+              <span>Née le {{patientList[ind].neeLe}}</span>
+              <span>{{patientList[ind].phone}}</span>
+              <span>{{patientList[ind].address}}</span>
+              <span>{{patientList[ind].phone}}</span>
+              <span>{{patientList[ind].email}}</span>
 
             </div>
-            <div class="item-info-2">
-
-              <span>Mariée, 3 enfants</span>
+            <div class="item-info-1">
+              <span>{{patientList[ind].maritalStatus}}</span>
               <span>Cadre supérieure</span>
               <span>Mutuelle du Mans</span>
               <span>Médecin tratant : Dr Roberty</span>
@@ -70,16 +103,19 @@
               <span>XXXX</span>
 
             </div>
+
+
           </div>
+
         </div>
         <div class="item-user-data-2">
           <div class="item-msg">
             <b>Messages/Evenements/Notifcation</b>
           </div>
           <div class="msg-cont-card">
-            <span *ngFor="let user of msgCardList">
+            <!-- <span *ngFor="let user of userList">
               <app-msg-card></app-msg-card>
-            </span>
+            </span> -->
           </div>
         </div>
 

@@ -3,14 +3,29 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  ip: "ec2-52-59-231-143",
+  production: false,
+  version: "v1"
 };
+const _urlEnd: string = ".eu-central-1.compute.amazonaws.com:"
 
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+//--------------------------------------------------LOGIN
+const _loginPort: string = "8090";
+const _loginType: string = "auth"
+export const loginUrl: string = "http://" + environment.ip + _urlEnd + _loginPort + '/' + environment.version + '/' + _loginType + '/'
+
+//--------------------------------------------------USER
+const _lUserPort: string = "9090";
+const _loginUserType: string = "user"
+export const userUrl: string = "http://" + environment.ip + _urlEnd + _lUserPort + '/' + environment.version + '/' + _loginUserType + '/'
+
+//--------------------------------------------------LIST OF PATIENT
+const _listPatientPort: string = "9091";
+const _listPatientType: string = "patient"
+export const patientListUrl: string = "http://" + environment.ip + _urlEnd + _listPatientPort + '/' + environment.version + '/' + _listPatientType + '/'
+
+
+
+
+

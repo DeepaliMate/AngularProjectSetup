@@ -2,15 +2,15 @@
  
   </div> -->
 
-<div class=" user-card">
-  <div class="user-profile ">
+<div class="user-card" [ngClass]="{'isActive': selectedIndex === index}" (click)="viewMessageCard(index)">
+  <div class="user-profile  ">
     <mat-icon color="primary" class="user-icon">account_circle</mat-icon>
-    <span class="user-detail">
-      <span>Dorothée Lemarchand</span>
+    <span class="user-detail ">
+      <span>{{name}}{{index}}</span>
       <br>
-      <span>Née le 19/03/1978</span>
+      <span>{{neeLe}}</span>
       <br>
-      <span>2780375115118 56</span>
+      <span>{{phone}}</span>
     </span>
     <span>
       <span>
@@ -21,20 +21,17 @@
   <mat-divider></mat-divider>
   <div class="detail">
     <div class="d1">
-      <span>Prochain RDV le 20/04/2019 à 18:30</span>
+      <span *ngIf="!notifications">Prochain RDV le {{prodv}}</span>
+      <span *ngIf="notifications">{{notifications}} Notifications</span>
     </div>
-    <div class="d2">
-      <span>
-        <i class="fa fa-arrow-right fa-2x" style="color:darkslategrey;"></i>
-      </span>
 
-    </div>
     <!-- 
     <span style="background-color: forestgreen">
       <i class="fas fa-arrow-alt-right"></i>
       <i class="fas fa-bell"></i>
     </span> -->
   </div>
+
 
 
 </div>

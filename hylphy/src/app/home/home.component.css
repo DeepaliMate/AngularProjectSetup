@@ -61,6 +61,11 @@ aside {
   flex-direction: column;
 }
 
+.itemsO {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
 .radio-btn {
   width: 68px;
   height: 15px;
@@ -133,7 +138,7 @@ aside {
 .item-info-1 {
   display: flex;
   color: black;
-  height: 27px;
+  /* height: 27px; */
   border-width: thin;
   margin-top: 5px;
   flex-direction: column;
@@ -150,7 +155,7 @@ aside {
   flex-direction: row;
 }
 
-.item-info-2 {
+/* .item-info-2 {
   width: 50%;
   display: flex;
   color: black;
@@ -164,7 +169,7 @@ aside {
   width: 50%;
   margin-left: 17px;
   margin-top: 17px;
-}
+} */
 
 .item-msg {
   background-color: #d8d8d8;
@@ -178,4 +183,63 @@ aside {
 .msg-cont-card {
   display: flex;
   flex-direction: column;
+}
+
+.user-card {
+  width: 364px;
+  height: 111px;
+  border-radius: 4px;
+  box-shadow: 0 4px 23px 0 rgba(0, 0, 0, 0.11);
+  margin: 0.5em;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.isActive {
+  background-color: #cff8ef;
+}
+
+.user-icon {
+  font-size: 52px;
+  margin: 7px;
+  display: flex;
+}
+
+.user-profile {
+  display: flex;
+  flex: 0.27;
+}
+
+.detail {
+  height: 17px;
+  font-family: Arial;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: -0.11px;
+  color: #b33e76;
+  display: flex;
+  flex-direction: row;
+  margin-left: 3em;
+  display: flex;
+  flex-direction: row;
+}
+
+.d1 {
+  flex: 3;
+  padding-top: 5px;
+}
+
+.line {
+  width: 1280px;
+  height: 720px;
+}
+
+.user-detail {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2em;
+  margin-top: 1em;
+  flex: 0.9;
 }

@@ -13,6 +13,9 @@ import {
   MatToolbarModule,
   MatMenuModule,
   MatRadioModule,
+  MatTooltipModule,
+  MatDialogModule,
+  MatSelectModule
 
 
 } from '@angular/material';
@@ -33,6 +36,9 @@ const materialComponents = [
   BrowserAnimationsModule,
   MatMenuModule,
   MatRadioModule,
+  MatTooltipModule,
+  MatSelectModule,
+  MatDialogModule
 ];
 
 

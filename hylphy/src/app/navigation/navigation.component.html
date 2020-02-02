@@ -61,7 +61,7 @@
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
       </span>
-      <span style="margin-top: 14px;width: 128px;">Hylphy</span>
+      <span style="margin-top: 14px;width: 128px;">Fyne</span>
       <span>
         <form class="hidden-sm" class="form1">
           <mat-form-field class="search-1">
@@ -75,7 +75,7 @@
       </span>
 
       <div class="login-user">
-        Steve Boulot
+        {{userData.name}}
       </div>
       <div class="login-user">
         Lun. 18 Mars 2020 16:12
@@ -90,8 +90,18 @@
 
 
     <div class="row2">
+      <span *ngFor="let modules of userData.allowedModules">
+
+        <span>
+          <button mat-button>{{modules}}</button>
+        </span>
+
+      </span>
+
+      <!-- 
+
       <span>
-        <button mat-button>Dashboard</button>
+        <button mat-button>{{modules}}</button>
       </span>
       <span>
         <button mat-button>Agenda</button>
@@ -101,7 +111,7 @@
       </span>
       <span>
         <button mat-button>Messagerie</button>
-      </span>
+      </span> -->
     </div>
   </div>
 </mat-toolbar>

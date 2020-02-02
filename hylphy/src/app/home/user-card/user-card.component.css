@@ -1,12 +1,18 @@
 .user-card {
   width: 364px;
-  height: 106px;
+  height: 111px;
   border-radius: 4px;
   box-shadow: 0 4px 23px 0 rgba(0, 0, 0, 0.11);
   margin: 0.5em;
   color: black;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+}
+
+.isActive {
+  background-color: #cff8ef;
+  color: darkgreen;
 }
 
 .user-icon {
@@ -36,10 +42,6 @@
 
 .d1 {
   flex: 3;
-}
-
-.d2 {
-  flex: 1;
 }
 
 .line {

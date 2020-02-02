@@ -1,4 +1,5 @@
-import { LoginService } from './../services/login.service';
+
+
 import { AngularMaterialModule } from './angular-material/angular-material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -8,7 +9,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule, Routes } from '@angular/router';
 import { Router } from '@angular/router';
 
-
+import { LoginService } from './../services/login.service';
+import { PatientListService } from './../services/patient-list.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,14 +22,17 @@ import { UserCardComponent } from './home/user-card/user-card.component';
 import { MsgCardComponent } from './home/msg-card/msg-card.component';
 import { NewPatientComponent } from './home/new-patient/new-patient.component';
 import { HttpClientModule } from '@angular/common/http';
+import { OrderListPipe } from './home/order-list.pipe';
+
 
 
 
 
 const routes: Routes = [
+  // { path: '**', redirectTo: 'login' },
   { path: 'nav', component: NavigationComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent, data: {} },
   { path: 'newUser', component: NewPatientComponent },
 
 
@@ -41,7 +46,8 @@ const routes: Routes = [
     NavigationComponent,
     UserCardComponent,
     MsgCardComponent,
-    NewPatientComponent
+    NewPatientComponent,
+    OrderListPipe
 
   ],
   imports: [
@@ -59,7 +65,7 @@ const routes: Routes = [
   exports: [
     RouterModule
   ],
-  providers: [LoginService],
+  providers: [LoginService, PatientListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

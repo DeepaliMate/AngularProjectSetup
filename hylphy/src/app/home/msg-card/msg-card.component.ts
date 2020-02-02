@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SubjectStoreService } from '../../../services/subject-store.service';
 
 @Component({
   selector: 'app-msg-card',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MsgCardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private SubjectStoreService: SubjectStoreService) { }
 
   ngOnInit() {
+
   }
 
 }
