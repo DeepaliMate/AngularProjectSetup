@@ -1,15 +1,15 @@
 
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { LoginService } from '../../services/login.service'
-
+import { SubjectStoreService } from '../../services/subject-store.service'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  constructor(private router: Router, private loginService: LoginService) { }
+  constructor(private router: Router, private loginService: LoginService, private SubjectStoreService: SubjectStoreService) { }
   username: string;
   password: string;
   employee;
@@ -19,27 +19,39 @@ export class LoginComponent implements OnInit {
   }
   login(): void {
 
-    this.loginService.getLogin(this.username, this.password).subscribe((data) => {
-      console.log("fnidjndsjn");
-      console.log(JSON.parse(data));
-      if(data!=""){
-        this.router.navigate(["home"]);
+
+    this.loginService.getLogin(this.username, this.password).subscribe((secreteKey) => {
+
+      if (secreteKey) {
+        console.log("code", secreteKey)
+        this.SubjectStoreService.secreteKey.next(secreteKey);
+        this.loginService.getUserDetails(secreteKey).subscribe((data2) => {
+          if (data2) {
+            this.SubjectStoreService.profileObs.next(data2);
+            this.router.navigate(["home"]);
+          } else {
+            alert("Invalid credentials");
+          }
+        })
       }
       else {
-         alert("Invalid credentials");
-       }
-      // this.employee = data
-    });
-    //   this.flag = true;
+        alert("Invalid credentials");
+      }
 
-    //   if (this.username == 'admin' && this.password == 'admin') {
-    //     this.flag = false;
-    //     this.router.navigate(["home"]);
-    //   } else {
-    //     alert("Invalid credentials");
-    //   }
-  }
-  ngOnDestroy() {
-    document.body.className = "";
+      this.loginService.getLogin(this.username, this.password).subscribe((data) => {
+        console.log("fnidjndsjn");
+        console.log(JSON.parse(data));
+        if (data != "") {
+          this.router.navigate(["home"]);
+        }
+        else {
+          alert("Invalid credentials");
+        }
+        // this.employee = data
+
+      });
+
+    });
   }
 }
+
