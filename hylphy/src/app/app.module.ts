@@ -22,7 +22,7 @@ import { UserCardComponent } from './home/user-card/user-card.component';
 import { MsgCardComponent } from './home/msg-card/msg-card.component';
 import { NewPatientComponent } from './home/new-patient/new-patient.component';
 import { HttpClientModule } from '@angular/common/http';
-import { OrderListPipe } from './home/order-list.pipe';
+
 
 
 
@@ -47,7 +47,7 @@ const routes: Routes = [
     UserCardComponent,
     MsgCardComponent,
     NewPatientComponent,
-    OrderListPipe
+
 
   ],
   imports: [
