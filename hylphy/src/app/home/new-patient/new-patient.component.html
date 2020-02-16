@@ -1,15 +1,117 @@
-<div class="example-container">
-  <mat-form-field>
-    <input matInput placeholder="Input">
-  </mat-form-field>
+<h2 class="title">Nouveau Patient</h2>
+<div class="out-form-div">
+  <form name="newPatientForm" role="form" class="newUForm" #addCategoryForm="ngForm" (ngSubmit)="Submit()">
+    <div class="form-side-1">
+      <mat-form-field>
+        <mat-label>Nom</mat-label>
+        <input matInput [(ngModel)]="newUser.lastName" name="lastName" required>
+        <mat-error>Entrez s'il vous plait Nom</mat-error>
+      </mat-form-field>
 
-  <mat-form-field>
-    <textarea matInput placeholder="Textarea"></textarea>
-  </mat-form-field>
+      <mat-form-field>
+        <mat-label>Nom de jeune fille</mat-label>
+        <input matInput [(ngModel)]="newUser.lastName" name="lastName">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Date de Naissance</mat-label>
+        <input matInput [(ngModel)]="newUser.dateOfBirth" name="dateOfBirth" required>
+        <mat-error>Entrez s'il vous plait Date de Naissance</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Adresse</mat-label>
+        <input matInput [(ngModel)]="newUser.address" name="address" required>
+        <mat-error>Entrez s'il vous plait Address</mat-error>
+      </mat-form-field>
 
-  <mat-form-field>
-    <mat-select placeholder="Select">
-      <mat-option value="option">Option</mat-option>
-    </mat-select>
-  </mat-form-field>
+      <mat-form-field>
+        <mat-label>Ville</mat-label>
+        <input matInput [(ngModel)]="newUser.ville" name="ville" required>
+        <mat-error>Entrez s'il vous plait Ville</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Tel.Mobile</mat-label>
+        <input matInput [(ngModel)]="newUser.mobile" name="mobile" required>
+        <mat-error>Enfants</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="newUser.email" name="email" required>
+        <mat-error>Entrez s'il vous plait Email</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Numéro de sécurité sociale</mat-label>
+        <input matInput [(ngModel)]="newUser.ssn" name="ssn" required>
+        <mat-error>Entrez s'il vous plait Numéro de sécurité sociale</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Médecin traitant</mat-label>
+        <input matInput [(ngModel)]="newUser.medicinTraitant" name="medicinTraitant" required>
+        <mat-error>Entrez s'il vous plait Médecin traitant </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Profession</mat-label>
+        <input matInput [(ngModel)]="newUser.profession" name="profession">
+      </mat-form-field>
+
+    </div>
+    <!-- Right Hand side -->
+    <div class="form-side-1">
+      <mat-form-field>
+        <mat-label>Prénom</mat-label>
+        <input matInput [(ngModel)]="newUser.firstName" name="firstName" required>
+        <mat-error>Entrez s'il vous plait Prénom</mat-error>
+      </mat-form-field>
+      <div class="hideBlock"></div>
+
+      <mat-form-field>
+        <mat-label>Lieu de naissance</mat-label>
+        <input matInput [(ngModel)]="newUser.placeOfBorth" name="placeOfBorth" required>
+        <mat-error>Entrez s'il vous plait Lieu de naissance</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Code Postal</mat-label>
+        <input matInput [(ngModel)]="newUser.codePostal" name="codePostal" required>
+        <mat-error>Entrez s'il vous plait Code Postal</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>État/Province/Région</mat-label>
+        <input matInput [(ngModel)]="newUser.province" name="province" required>
+        <mat-error>Entrez s'il vous plait État/Province/Région</mat-error>
+      </mat-form-field>
+      <div class="hideBlock"></div>
+      <mat-form-field>
+        <mat-label>Tél. fixe</mat-label>
+        <input matInput [(ngModel)]="newUser.landline" name="landline">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Mutuelle</mat-label>
+        <input matInput [(ngModel)]="newUser.mutuelle" name="mutuelle" required>
+        <mat-error>Entrez s'il vous plait Mutuelle</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Statut martital</mat-label>
+        <input matInput [(ngModel)]="newUser.maritalStatus" name="maritalStatus" required>
+        <mat-error>Entrez s'il vous plait Statut martital</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Enfants</mat-label>
+        <input matInput [(ngModel)]="newUser.children" name="children" required>
+        <mat-error>Entrez s'il vous plait Enfants</mat-error>
+
+      </mat-form-field>
+      <div class="buttonForm">
+        <button mat-button mat-raised-button type="submit" color="primary" class="btn-pro" [disabled]="addCategoryForm.invalid">
+          <b>{{newUser.operationType=='Add'||'undefined'?'Enregistrer':'mise à jour'}}</b>
+        </button>
+        <button mat-button mat-raised-button color="primary" class="btn-pro">Cancle</button>
+        <button mat-button mat-raised-button color="primary" class="btn-pro">
+          <b>DMP </b>
+        </button>
+      </div>
+    </div>
+  </form>
 </div>

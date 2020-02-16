@@ -1,6 +1,5 @@
+import { NewPatientObj } from './../../variableObj/new-patient-obj';
 import { Component, OnInit } from '@angular/core';
-
-
 
 @Component({
   selector: 'app-new-patient',
@@ -10,8 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class NewPatientComponent implements OnInit {
 
   constructor() { }
-
+  newUser: NewPatientObj = {};
   ngOnInit() {
+    console.log("ppp>", this.newUser.operationType)
+  }
+  Submit() {
+    console.log('workin', this.newUser.lastName);
   }
 
 }

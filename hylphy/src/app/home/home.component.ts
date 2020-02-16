@@ -1,4 +1,3 @@
-import { OrderListPipe } from './order-list.pipe';
 import { SubjectStoreService } from './../../services/subject-store.service';
 import { PatientListService } from './../../services/patient-list.service';
 import { Component, OnInit, Input } from '@angular/core';
